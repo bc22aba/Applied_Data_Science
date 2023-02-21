@@ -4,7 +4,7 @@ import numpy as np
 
 def ReadCSVData():
     import pandas as pd
-    return pd.read_excel('C:/Users/chrag/Downloads/covid_worldwide.xlsx',nrows=8)
+    return pd.read_excel('D:/WorkSpace/Applied_Data_Science/Assignment_1/Data_sets/covid_worldwide.xlsx',nrows=8)
     
 ''' Function definition'''
 def LicenCHart(): 
@@ -16,7 +16,7 @@ def LicenCHart():
    plt.xlabel('Country')
    plt.title("COVID CASES")
    plt.legend("Total Deaths")
-  ''' plt.set_ylim(100000,999999999,100000)'''
+   ''' plt.set_ylim(100000,999999999,100000)'''
    plt.show()
    return 
 
