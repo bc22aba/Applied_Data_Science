@@ -4,7 +4,7 @@ import numpy as np
 
 '''Reading Excel file data'''
 def ReadData():
-   return pd.read_excel('C:/Users/chrag/Downloads/Bar_Chart_DataSet.xlsx')
+   return pd.read_excel('D:/WorkSpace/Applied_Data_Science/Assignment_1/Data_sets/Bar_Chart_DataSet.xlsx')
 
 ''' Function definition'''
 def BarPlot(): 
@@ -14,7 +14,7 @@ def BarPlot():
    
    ''' X axis Data '''
    cols =["2021","2020","2019"]
-   plt.figure(5,figsize=(12,10),facecolor='lightblue')
+   plt.figure(5,figsize=(12,10),facecolor='white')
    plt.subplot(1, 1, 1)
    
    width1 = 0.4
