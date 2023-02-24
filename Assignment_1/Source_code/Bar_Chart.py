@@ -9,23 +9,42 @@ def ReadData():
 ''' Function definition'''
 def BarPlot(): 
     
-   '''Get data'''
+   '''Get excel file data '''
    Unemployment_data = ReadData()
    
-   ''' X axis Data '''
-   cols =["2021","2020","2019"]
-   plt.figure(5,figsize=(12,10),facecolor='white')
-   plt.subplot(1, 1, 1)
+   ''' X axis Data '''   
+   x_axis = Unemployment_data['Country Name'];
    
-   width1 = 0.4
-   plt.bar(Unemployment_data['Country Name'],Unemployment_data['2021'],width=width1)
-   plt.bar(Unemployment_data['Country Name'],Unemployment_data['2020'],width=width1)
-  
-   plt.ylabel("Percentage (%)")
-   plt.xlabel('Country')
-   plt.title("Unemployment, total (% of total labor force)")
-   plt.legend(["2021","2020"])
-   plt.show()
+   '''multiple bar's data'''
+   bar1 = Unemployment_data['2021'];
+   bar2 = Unemployment_data['2020'];
+   bar3 = Unemployment_data['2019'];
+   
+   '''Legend name for each bar respectively'''
+   lengendValues =[2021,2020,2019];
+   
+   '''Generate Multiple Bar'''
+   def CreateBar(X, barValues,width=0.9):
+       n = len(barValues);
+       _xAxis = np.arange(len(X));
+       for i in range(n):
+           plt.bar(_xAxis - width/3 + i/float(n)*width, barValues[i],
+                   width=width/float(n), align="center") 
+        
+       '''Setting X-axis ticks'''   
+       plt.xticks(_xAxis, X)
+       
+   '''Create a Figure of width = 12 and height = 10'''
+   plt.figure(5,figsize=(12,10),facecolor='lightblue')
+   
+   '''Calling CreateBar function to generate multi bar plot'''   
+   CreateBar(x_axis, [bar1,bar2,bar3]);
+   
+   plt.ylabel("Unemployment Percentage (%)");
+   plt.xlabel('Country');
+   plt.title("Unemployment, total (% of total labor force)");
+   plt.legend(lengendValues);
+   plt.show();
    return
 
 '''Function calling'''
