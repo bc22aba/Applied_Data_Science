@@ -15,7 +15,7 @@ def ReadData():
     return pd.read_excel('D:/WorkSpace/Applied_Data_Science/Assignment_1/\
 Data_sets/Pie_Chart_DataSet.xlsx')
 
-'''Function Definition to Generate Pie_Chart Plot'''
+'''Main Function Definition to Generate Pie_Chart Plot'''
 def PieChart():
     
     '''Get Data from Excel file'''
@@ -27,6 +27,6 @@ def PieChart():
     plt.show()
     return
 
-'''Function Calling to Generate Pie_Chart'''
+'''Main Function Calling to Generate Pie_Chart'''
 PieChart()
 

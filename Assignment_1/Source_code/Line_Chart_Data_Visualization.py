@@ -16,7 +16,7 @@ def ReadData():
     return pd.read_excel('D:/WorkSpace/Applied_Data_Science/Assignment_1/\
 Data_sets/covid_worldwide.xlsx',nrows=8)
     
-''' Function definition'''
+''' Main Function definition'''
 def MultiplePlot(): 
     
    '''Get data'''
@@ -39,5 +39,5 @@ def MultiplePlot():
    plt.show()
    return 
 
-'''Function calling'''
+'''Main Function calling'''
 MultiplePlot()
