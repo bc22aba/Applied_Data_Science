@@ -1,10 +1,20 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Feb 20 10:05:38 2023
+
+@author: Cheruku Bhaskar
+"""
+
 import pandas as pd
 import matplotlib.pyplot as plt
 
-'''Data link: https://www.kaggle.com/code/azizabhutto/covid-cases-and-deaths-worldwide/data'''
+'''Data link: https://www.kaggle.com/code/azizabhutto/covid-cases-and-deaths
+              -worldwide/data'''
+              
 '''Read Excel file using Pandas'''
 def ReadData():
-    return pd.read_excel('D:/WorkSpace/Applied_Data_Science/Assignment_1/Data_sets/covid_worldwide.xlsx',nrows=8)
+    return pd.read_excel('D:/WorkSpace/Applied_Data_Science/Assignment_1/\
+Data_sets/covid_worldwide.xlsx',nrows=8)
     
 ''' Function definition'''
 def MultiplePlot(): 
