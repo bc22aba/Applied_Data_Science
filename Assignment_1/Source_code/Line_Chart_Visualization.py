@@ -6,7 +6,7 @@ def ReadData():
      return pd.read_excel('D:/WorkSpace/Applied_Data_Science/Assignment_1/\
 Data_sets/Line_Chart_DataSet.xlsx')
     
-''' Function definition'''
+'''Main Function definition'''
 def MultipleLinePlot(): 
     
    '''Get data'''
@@ -27,5 +27,5 @@ def MultipleLinePlot():
    plt.show()
    return 
 
-'''Function calling'''
+'''Main Function calling'''
 MultipleLinePlot()
