@@ -53,7 +53,7 @@ def BarPlot():
    
    plt.ylabel("Unemployment Percentage (%)");
    plt.xlabel('Country');
-   plt.title("Unemployment, total (% of total labor force)");
+   plt.title("Unemployment % out of total population year wise");
    plt.legend(lengendValues);
    plt.show();
    return
