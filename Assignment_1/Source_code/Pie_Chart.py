@@ -12,6 +12,8 @@ import matplotlib.pyplot as plt
               
 '''Read Excel file Data using pandas'''
 def ReadData():
+    #As Per the PEP-8 guidelines each line should not exceed 79 characters
+    #So i have used backslash to separate the code.
     return pd.read_excel('D:/WorkSpace/Applied_Data_Science/Assignment_1/\
 Data_sets/Pie_Chart_DataSet.xlsx')
 
@@ -22,7 +24,11 @@ def PieChart():
     population_data = ReadData()
     data = population_data["Population Percentage"]
     labels =population_data["Country Name"]
+    
+    #Creating Pie chart
     plt.pie(data,labels=labels,autopct='%1.1f%%');
+    
+    #Title of pie chart
     plt.title("% of World Population")
     plt.show()
     return

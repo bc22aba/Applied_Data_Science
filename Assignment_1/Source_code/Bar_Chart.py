@@ -13,14 +13,19 @@ import numpy as np
 
 '''Reading Excel file data'''
 def ReadData():
+    #As Per the PEP-8 guidelines each line should not exceed 79 characters
+    #So i have used backslash to separate the code.
    return pd.read_excel('D:/WorkSpace/Applied_Data_Science/Assignment_1/\
 Data_sets/Bar_Chart_DataSet.xlsx')
                         
 '''Generate Multiple Bar'''
 def CreateBar(X, barValues,width=0.9):
+    #Returns the length of an array
      n = len(barValues);
      _xAxis = np.arange(len(X));
      for i in range(n):
+         #Below snippet is used to draw multiple bars without overlapping 
+         #on each other.
          plt.bar(_xAxis - width/3 + i/float(n)*width, barValues[i],
                  width=width/float(n), align="center") 
       
@@ -51,9 +56,13 @@ def BarPlot():
    '''Calling CreateBar function to generate multi bar plot'''   
    CreateBar(x_axis, [bar1,bar2,bar3]);
    
+   #Y-axis label 
    plt.ylabel("Unemployment Percentage (%)");
+   #X-axis label
    plt.xlabel('Country');
+   #Bar Plot Title
    plt.title("Unemployment % out of total population year wise");
+   ##legend values for each bar plot for a given group
    plt.legend(lengendValues);
    plt.show();
    return
