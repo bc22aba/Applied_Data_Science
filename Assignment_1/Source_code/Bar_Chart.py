@@ -61,7 +61,9 @@ def BarPlot():
    #X-axis label
    plt.xlabel('Country');
    #Bar Plot Title
-   plt.title("Unemployment % out of total population year wise");
+   plt.title("Year wise unemployment % out of total population in selected \
+countries");
+
    ##legend values for each bar plot for a given group
    plt.legend(lengendValues);
    plt.show();
