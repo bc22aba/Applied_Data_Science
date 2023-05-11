@@ -19,15 +19,23 @@ from errors import err_ranges
 
 """#  .
 
-> Find interesting clusters of data. Note that for meaningful clusters it is often a good idea to look at normalised values like GDP per capita, CO2 production per head, CO2 per $ of GDP or fraction of a sector. You might look at most recent values or compare recent values with, say, values 30 or 40 years ago or use total historic values.
+> Find interesting clusters of data. Note that for meaningful clusters it is \
+often a good idea to look at normalised values like GDP per capita, CO2 \
+production per head, CO2 per $ of GDP or fraction of a sector. You might look \
+at most recent values or compare recent values with, say, values 30 or 40 \
+years ago or use total historic values.
 
 """
 
 # Load climate change data from World Bank API
-climate_data = pd.read_csv("C:/Users/cheru/OneDrive/Desktop/assngmt docs/Assignmt-3/New folder/myZip_2196126 (2)/6458281_484394222_Clusteringandfitting2/Clustering and fitting/API_NY.GDP.PCAP.CD_DS2_en_csv_v2_5447781.csv", skiprows=4)
+climate_data = pd.read_csv("C:/Users/cheru/OneDrive/Desktop/assngmt \
+docs/Assignmt-3/New folder/myZip_2196126 (2)/6458281_484394222_Clusteringand\
+fitting2/Clustering and fitting/API_NY.GDP.PCAP.CD_DS2_en_csv_v2_5447781.csv",\
+skiprows=4)
 
 # Remove unnecessary columns
-climate_data = climate_data.drop(columns=['Country Code', 'Indicator Name', 'Indicator Code','Unnamed: 66'])
+climate_data = climate_data.drop(columns=['Country Code', 'Indicator Name', \
+'Indicator Code','Unnamed: 66'])
 
 
 # Transpose the data so that each country is a row and each year is a column
@@ -53,7 +61,8 @@ climate_data['cluster'] = kmeans.labels_
 
 # Plot the data colored by cluster membership and with cluster centers marked
 sns.scatterplot(x='2000', y='2016', hue='cluster', data=climate_data)
-sns.scatterplot(x=kmeans.cluster_centers_[:, 16], y=kmeans.cluster_centers_[:, 0], color='black', marker='x', s=200)
+sns.scatterplot(x=kmeans.cluster_centers_[:, 16], \
+y=kmeans.cluster_centers_[:, 0], color='black', marker='x', s=200)
 plt.xlabel('CO2 emissions per capita (metric tons)')
 plt.ylabel('CO2 emissions per capita (metric tons)')
 plt.title('K-means clustering of CO2 emissions data')
@@ -61,8 +70,14 @@ plt.show()
 
 """#  .
 
-> Create simple model(s) fitting data sets with curve_fit. This could be fits of time series, but also, say, one attribute as a function of another. Keep the model simple
-(e.g., exponential growth, logistic function, low order polynomials). Use the model for predictions, e.g. values in ten or twenty years time including confidence ranges. Use the attached function err_ranges to estimate lower and upper limits of the confidence range and produce a plot showing the best fitting function and the confidence range.
+> Create simple model(s) fitting data sets with curve_fit. This could be fits \
+of time series, but also, say, one attribute as a function of another. Keep \
+the model simple.
+(e.g., exponential growth, logistic function, low order polynomials). \
+Use the model for predictions, e.g. values in ten or twenty years time \
+including confidence ranges. Use the attached function err_ranges to \
+estimate lower and upper limits of the confidence range and produce a plot \
+showing the best fitting function and the confidence range.
 """
 
 # Extract CO2 emissions per capita data for the United States
@@ -109,7 +124,8 @@ upper_bounds = predict_polynomial(years) + errs[1]
 # Plot the original data, the best fitting function, and the confidence range
 plt.plot(years, gdp_per_capita, 'bo', label='Data')
 plt.plot(future_years, predicted_values, 'r-', label='Best Fitting Function')
-plt.fill_between(years, lower_bounds, upper_bounds, color='gray', alpha=0.3, label='Confidence Range')
+plt.fill_between(years, lower_bounds, upper_bounds, color='gray', alpha=0.3, \
+label='Confidence Range')
 plt.xlabel('Year')
 plt.ylabel('GDP per capita')
 plt.title('Polynomial Fit to GDP per capita')
@@ -118,10 +134,18 @@ plt.show()
 
 """# .
 
-> You do not need to use the same data sets for clustering and fitting, but one approach could be: find clusters of countries, pick one country from each cluster and compare countries from one cluster and find similarities and differences, compare countries from different clusters or pick a few countries from one cluster and compare with other regions. Investigate trends. Do you find similar or different trends in different clusters? Do you find similar or different trends in countries from the same cluster?
+> You do not need to use the same data sets for clustering and fitting, but \
+one approach could be: find clusters of countries, pick one country from each \
+cluster and compare countries from one cluster and find similarities and \
+differences, compare countries from different clusters or pick a few \
+countries from one cluster and compare with other regions. \
+Investigate trends. Do you find similar or different trends in different \
+clusters? Do you find similar or different trends in countries from the \
+same cluster?
 """
 
-# Assuming you have performed the clustering analysis and added the cluster labels as a new column 'cluster' in the climate_data dataframe
+# Assuming you have performed the clustering analysis and added the cluster \
+# labels as a new column 'cluster' in the climate_data dataframe
 
 # Separate the data by clusters
 clusters = climate_data.groupby('cluster')
